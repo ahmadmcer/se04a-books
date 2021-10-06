@@ -1,5 +1,6 @@
 let menuList = document.getElementById('menuList');
 let nav = document.getElementsByTagName('nav')[0];
+let searchInput = document.getElementById('menuSearch');
 let screenMobile = window.matchMedia('(max-width: 768px)');
 let menuToggle = false;
 
@@ -22,7 +23,7 @@ for (let i of menuList.children) {
 
 function menuSearch() {
   let input, filter, lisTitle, lisSubTitle, title, subTitle, found, i, j;
-  input = document.getElementById('menuSearch').firstElementChild;
+  input = searchInput.firstElementChild;
   filter = input.value.toLowerCase();
   lisTitle = menuList.children;
 
@@ -74,7 +75,7 @@ function menuDropdown() {
       nav.style.height = '100%';
       menuToggle = true;
     } else {
-      nav.style.height = '13%';
+      nav.style.height = '14%';
       menuToggle = false;
     }
   }
