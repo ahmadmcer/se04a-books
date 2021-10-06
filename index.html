@@ -14,19 +14,20 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="alertMobile">
-    <div>
-      <div><i class="fas fa-cogs fa-5x"></i></div>
-      <h1>Aplikasi mobile belum tersedia</h1>
-      <p>Sementara gunakan PC untuk mengaksesnya</p>
-    </div>
-  </div>
-
   <nav>
-    <div id="nav-icon"><i class="fas fa-book-open fa-5x"></i></div>
-    <h1>SE-04-A Books</h1>
-    <p>Semester 3</p>
-    <input type="text" id="menuSearch" onkeyup="menuSearch()" placeholder="Cari..." title="Ketik judul atau mata kuliah">
+    <div id="nav-logo">
+      <div id="nav-icon"><i class="fas fa-book-open"></i></div>
+      <div id="nav-title">
+        <h1>SE-04-A Books</h1>
+        <p>Semester 3</p>
+      </div>
+      <div id="nav-dropdown" onclick="menuDropdown()"><i class="fas fa-bars fa-3x"></i></div>
+    </div>
+
+    <div id="menuSearch">
+      <input type="text" onkeyup="menuSearch()" placeholder="Cari..." title="Ketik judul atau mata kuliah">
+    </div>
+
     <div id="menu">
       <ul id="menuList">
 
