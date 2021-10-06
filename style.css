@@ -95,14 +95,11 @@ ul {
   #nav-title > h1,
   #nav-title > p {
     text-align: left;
+    margin: 0;
   }
 
   #nav-title > h1 {
-    margin: 0;
-  }
-
-  #nav-title > p {
-    margin: 0;
+    font-size: 1.25em;
   }
 
   #nav-dropdown {
