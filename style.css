@@ -25,7 +25,7 @@ body {
 }
 
 
-/* Side Nav */
+/* Alert Mobile */
 #alertMobile {
   display: none;
 }
@@ -73,7 +73,7 @@ body {
 
 /* Side Nav */
 nav {
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 20%;
   background-color: hsl(203, 72%, 30%);
@@ -179,7 +179,6 @@ ul {
   overflow: hidden;
   max-height: 0;
   padding-left: 24px;
-  transition: max-height 1s ease;
 }
 
 #menu .sub-on > ul {

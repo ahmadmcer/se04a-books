@@ -6,31 +6,49 @@ for (let li of menuList.children) {
   });
 }
 
-console.log(menuList.getElementsByTagName('li'));
-
 function menuSearch() {
-  let input, filter, lis, li, title, subTitle, i;
+  let input, filter, lisTitle, lisSubTitle, title, subTitle, found, i, j;
   input = document.getElementById('menuSearch');
   filter = input.value.toLowerCase();
-  lis = menuList.children;
+  lisTitle = menuList.children;
 
   if (input.value.length > 0) {
-    for (li of lis) {
+    for (li of lisTitle) {
       li.classList.add('sub-on');
     }
   } else {
-    for (li of lis) {
+    for (li of lisTitle) {
       li.classList.remove('sub-on');
     }
   }
 
-  for (li of lis) {
-    title = li.firstElementChild;
-    subTitle = li.children[1].children[0].children[0];
-    if (subTitle.innerHTML.toLowerCase().indexOf(filter) > -1 || title.innerHTML.toLowerCase().indexOf(filter) > -1) {
-      li.style.display = '';
+  for (i of lisTitle) {
+    found = false;
+    title = i.firstElementChild;
+    lisSubTitle = i.children[1].children;
+
+    if (title.innerHTML.toLowerCase().indexOf(filter) > -1) {
+      found = true;
     } else {
-      li.style.display = 'none';
+      for (j of lisSubTitle) {
+        subTitle = j.firstElementChild;
+        if (subTitle.innerHTML.toLowerCase().indexOf(filter) > -1) {
+          j.style.display = '';
+          found = true;
+        } else {
+          j.style.display = 'none';
+        }
+      }
+    }
+
+    for (j of lisSubTitle) {
+      j.style.display = '';
+    }
+
+    if (found) {
+      i.style.display = '';
+    } else {
+      i.style.display = 'none';
     }
   }
 }
